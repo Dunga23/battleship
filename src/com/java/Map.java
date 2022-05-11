@@ -8,24 +8,20 @@ public class Map implements Cloneable{
     public Map clone() throws CloneNotSupportedException {
         return (Map) super.clone();
     }
-    public int[][] getField() {
-        return field;
-    }
-    public int[] size() {
+    public int[] size(){
         return new int[]{10,10};}
-    public int getCell(int row, int col) {
+    public int getCell(int row, int col){
         return field[row][col];
     }
-    public boolean cellIsEmpty(int x,int y) {
+    public boolean cellIsEmpty(int x,int y){
         return field[y][x]==0;
     }
-    public boolean isHealthyShip(int x,int y) {
+    public boolean isHealthyShip(int x,int y){
         return field[y][x]==1;
     }
-    public boolean isFreeEnterCell(int x,int y) {
+    public boolean isFreeEnterCell(int x,int y){
         return field[y][x]==0 || field[y][x]==1;
     }
-
     public void randomShipsFill(){
         java.util.Random random=new java.util.Random();
         int[] shipsSizes=new int[]{4,3,3,2,2,2,1,1,1,1};
@@ -89,15 +85,14 @@ public class Map implements Cloneable{
             env[0]=x-1;
         }
         if (x!=9){
-            env[1]=x + 1;
+            env[1]=x+1;
         }
         if (y!=0){
             env[2]=y-1;
         }
         if (y!=9){
-            env[3]=y + 1;
+            env[3]=y+1;
         }
-
         if (isVerticalShip(x,y)){
             for (int i = 2;i<env.length;i++){
                 if (env[i]!=-1){

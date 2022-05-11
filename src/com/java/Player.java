@@ -1,9 +1,7 @@
 package com.java;
-
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
-
 public class Player{
     final private String name;
     private Map map;

@@ -1,6 +1,5 @@
 package com.java;
 import java.util.Random;
-
 public class Randombot{
     private Map map;
     private Map radar;

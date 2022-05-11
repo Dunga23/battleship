@@ -1,18 +1,14 @@
 package com.java;
-
-import java.io.IOException;
-
-public class Game {
+public class Game{
     Player playerOne;
     Randombot playerTwo;
-
     public Game(Player playerOne, Randombot playerTwo){
         this.playerOne=playerOne;
         this.playerTwo=playerTwo;
     }
-    public void startGame() {
+    public void startGame(){
         Display display =new Display();
-        while (true){
+        while(true){
             display.displayMap(playerOne.getMap());
             display.displayRadar(playerOne.getRadar());
             if (playerOne.shoot()){

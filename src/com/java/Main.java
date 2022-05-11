@@ -1,10 +1,6 @@
 package com.java;
-
-import java.io.IOException;
-
-public class Main {
-
-    public static void main(String[] args) throws CloneNotSupportedException, IOException, InterruptedException{
+public class Main{
+    public static void main(String[] args){
         Map mapOne=new Map();
         Map mapTwo=new Map();
         Player playerOne=new Player("Player",mapOne,mapTwo);

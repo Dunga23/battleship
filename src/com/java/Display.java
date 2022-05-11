@@ -1,12 +1,9 @@
 package com.java;
 
-import java.io.IOException;
 import java.util.HashMap;
-
 import static java.lang.System.out;
-
 public class Display{
-    private final String columns=" А Б В Г Д Е Ж З И К\n";
+    private final String columns="  А Б В Г Д Е Ж З И К\n";
     private final String row="%2d %s %s %s %s %s %s %s %s %s %s\n";
     private final HashMap<Integer,String> mapSymbols=new HashMap<>(){{
         put(0," ");
