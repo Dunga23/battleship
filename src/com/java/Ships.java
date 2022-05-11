@@ -1,6 +1,6 @@
 package com.java;
 
-public class Ships {
+public class Ships{
     private int size;
     private int x;
     private int y;

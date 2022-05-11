@@ -8,9 +8,9 @@ public class Randombot{
         this.radar=radar;
     }
     public boolean shoot(){
-        Random random = new Random();
-        int x = random.nextInt(10);
-        int y = random.nextInt(10);
+        Random random=new Random();
+        int x=random.nextInt(10);
+        int y=random.nextInt(10);
         if (radar.isFreeEnterCell(x, y)){
             return radar.registerShot(x, y);
         }
