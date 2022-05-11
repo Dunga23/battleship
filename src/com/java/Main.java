@@ -5,7 +5,7 @@ public class Main{
         Map mapTwo=new Map();
         Player playerOne=new Player("Player",mapOne,mapTwo);
         Randombot playerTwo=new Randombot(mapTwo,mapOne);
-        Game gameSession=new Game(playerOne,playerTwo);
-        gameSession.startGame();
+        Game session=new Game(playerOne,playerTwo);
+        session.startGame();
     }
 }

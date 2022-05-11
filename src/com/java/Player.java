@@ -36,6 +36,8 @@ public class Player{
             System.out.println(command.toUpperCase().charAt(0));
             int x=commandsMap.get((Character.toString(command.toUpperCase().charAt(0))));
             int y=Integer.parseInt(Character.toString(command.charAt(1)))-1;
+            if(command.contains("10")==true){
+                y=9;}
             if (radar.isFreeEnterCell(x,y)){
                 return radar.registerShot(x,y);
             }

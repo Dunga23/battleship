@@ -7,7 +7,7 @@ public class Game{
         this.playerTwo=playerTwo;
     }
     public void startGame(){
-        Display display =new Display();
+        Display display=new Display();
         while(true){
             display.displayMap(playerOne.getMap());
             display.displayRadar(playerOne.getRadar());
