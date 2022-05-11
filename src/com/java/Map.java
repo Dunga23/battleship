@@ -5,7 +5,7 @@ public class Map implements Cloneable{
     public Map() {
         randomShipsFill();
     }
-    public Map clone() throws CloneNotSupportedException {
+    public Map clone() throws CloneNotSupportedException{
         return (Map) super.clone();
     }
     public int[] size(){
@@ -44,7 +44,6 @@ public class Map implements Cloneable{
                 }
             }
         }}
-
     private boolean canSetShip(Ships ships){
         if (ships.getX()<0 || ships.getY()<0 || field.length<= ships.getX() || field.length<= ships.getY()){
             return false;
@@ -55,10 +54,10 @@ public class Map implements Cloneable{
         if (!ships.isRotate() && field.length<= ships.getX()+ ships.getSize()){
             return false;
         }
-        int minX=Math.max(0, ships.getX()-1);
-        int minY=Math.max(0, ships.getY()-1);
-        int maxX=Math.min(field.length-1, ships.getX()+1+(ships.isRotate() ? 0: ships.getSize()));
-        int maxY=Math.min(field.length-1, ships.getY()+1+(ships.isRotate() ? ships.getSize():0));
+        int minX=Math.max(0,ships.getX()-1);
+        int minY=Math.max(0,ships.getY()-1);
+        int maxX=Math.min(field.length-1,ships.getX()+1+(ships.isRotate() ? 0: ships.getSize()));
+        int maxY=Math.min(field.length-1,ships.getY()+1+(ships.isRotate() ? ships.getSize():0));
         for (int x=minX;x<=maxX;x++){
             for (int y=minY; y<=maxY;y++){
                 if (!cellIsEmpty(x,y)){
@@ -73,13 +72,13 @@ public class Map implements Cloneable{
             return false;
         } else if (isHealthyShip(x,y)){
             field[y][x]=2;
-            if (!shipIsAlive(x,y)){
-                markDestroyedShip(x,y);
+            if (!shipAlive(x,y)){
+                mDestroyedship(x,y);
             }
             return true;
         }
         return false; }
-    private boolean shipIsAlive(int x,int y){
+    private boolean shipAlive(int x, int y){
         int[] env=new int[]{-1,-1,-1,-1};
         if (x!=0){
             env[0]=x-1;
@@ -93,7 +92,7 @@ public class Map implements Cloneable{
         if (y!=9){
             env[3]=y+1;
         }
-        if (isVerticalShip(x,y)){
+        if (VerticalShip(x,y)){
             for (int i = 2;i<env.length;i++){
                 if (env[i]!=-1){
                     if (field[env[i]][x]==1){
@@ -143,8 +142,8 @@ public class Map implements Cloneable{
             }
         }
         return false; }
-    private void markDestroyedShip(int x, int y){
-        if (isVerticalShip(x,y)){
+    private void mDestroyedship(int x, int y){
+        if (VerticalShip(x,y)){
             int positionY=y;
             while (positionY>0 && (field[positionY][x]!=0 && field[positionY][x]!=4)){
                 positionY-=1;
@@ -243,7 +242,7 @@ public class Map implements Cloneable{
             }
         }
     }
-    private boolean isVerticalShip(int x,int y){
+    private boolean VerticalShip(int x, int y){
         int[] env = new int[]{-1,-1,-1,-1};
         if (x!=0) {
             env[0]=x-1;
