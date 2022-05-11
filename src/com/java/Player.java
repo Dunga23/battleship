@@ -20,7 +20,7 @@ public class Player{
             "И1", "И2", "И3", "И4", "И5", "И6", "И7", "И8", "И9", "И10",
             "К1", "К2", "К3", "К4", "К5", "К6", "К7", "К8", "К9", "К10",
     };
-    final private HashMap<String, Integer> commandsMap = new HashMap<>(){{
+    final private HashMap<String, Integer> commandsMap=new HashMap<>(){{
         put("А",0); put("Б",1); put("В",2); put("Г",3);
         put("Д",4); put("Е",5); put("Ж",6); put("З",7);
         put("И",8); put("К",9);

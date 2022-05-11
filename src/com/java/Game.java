@@ -10,21 +10,19 @@ public class Game {
         this.playerOne=playerOne;
         this.playerTwo=playerTwo;
     }
-    public void startGame() throws IOException,InterruptedException{
+    public void startGame() {
         Display display =new Display();
         while (true){
-            display.clearScreen();
             display.displayMap(playerOne.getMap());
             display.displayRadar(playerOne.getRadar());
             if (playerOne.shoot()){
-                System.out.println("Попадание!");
+                System.out.println("Попадание");
                 continue;
             }
             while (true){
                 if (playerTwo.shoot()){
-                    System.out.println("Наш корабль атакован!");
-                } else{
-                    break; }
+                    System.out.println("Наш корабль атакован");
+                } else{ break;}
             }
         }
     }}

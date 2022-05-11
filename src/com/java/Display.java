@@ -5,32 +5,23 @@ import java.util.HashMap;
 
 import static java.lang.System.out;
 
-public class Display {
+public class Display{
     private final String columns=" А Б В Г Д Е Ж З И К\n";
     private final String row="%2d %s %s %s %s %s %s %s %s %s %s\n";
     private final HashMap<Integer,String> mapSymbols=new HashMap<>(){{
-        put(0," ");  // пустая клетка
-        put(1,"■");  // корабль
-        put(2,"□"); // подбитый корабль
-        put(3,"X"); // разрушенный корабль
-        put(4,"*"); // промах
+        put(0," ");
+        put(1,"■");
+        put(2,"□");
+        put(3,"X");
+        put(4,"*");
     }};
     private final HashMap<Integer,String> radarSymbols=new HashMap<>(){{
-        put(0," ");  // пустая клетка
-        put(1," ");  // корабль
-        put(2,"□"); // подбитый корабль
-        put(3,"X"); // разрушенный корабль
-        put(4,"*"); // промах
+        put(0," ");
+        put(1," ");
+        put(2,"□");
+        put(3,"X");
+        put(4,"*");
     }};
-    public void clearScreen() throws IOException,InterruptedException{
-        String os=System.getProperty("os.name").toLowerCase();
-        if (os.contains("win")){
-            new ProcessBuilder("cmd","/c","cls").inheritIO().start().waitFor();
-        } else if(os.contains("nix") || os.contains("nux")){
-            new ProcessBuilder("terminal","/c","clear").inheritIO().start().waitFor();
-        }
-        out.println();
-    }
     public void displayMap(Map map){
         StringBuilder mapImage=new StringBuilder();
         mapImage.append(columns);
@@ -46,7 +37,7 @@ public class Display {
         out.print(mapImage);
     }
     public void displayRadar(Map radar){
-        StringBuilder radarImage = new StringBuilder();
+        StringBuilder radarImage=new StringBuilder();
         radarImage.append(columns);
         for (int i=0; i<radar.size()[0];i++){
             radarImage.append(String.format(row,i + 1,

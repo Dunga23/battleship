@@ -5,7 +5,6 @@ public class Ships {
     private int x;
     private int y;
     private boolean rotate;
-
     public Ships(int size, int x, int y, boolean rotate){
         this.size=size;
         this.x=x;
@@ -25,7 +24,7 @@ public class Ships {
         return rotate;
     }
     @Override
-    public String toString() {
+    public String toString(){
         return "Ships{" +
                 "size=" + size +
                 ", x=" + x +
